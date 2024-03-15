@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="display.css">
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo">Student Management System</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./">ContactUs</a></li>
+                <li><a href="#" id="profile"></a>
+                    <ul><li><a href="/admin/auth" onclick="return logout()">Logout</a></li></ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>User's Details</h1>
+    <table>
+        <thead id="table-head">
+           <tr>
+              <th>SNO</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Father's Name</th>
+              <th>Address</th>
+              <th>Action</th>
+           </tr>
+        </thead>
+        
+        <tbody id="data-output">
+           <!-- Prodcuts from javascript file in here. -->
+           <!-- <tr>
+            <td>1</td>
+            <td>Ticket 1</td>
+            <td>Mobile is not working</td>
+            <td>Agent M1</td>
+            <td>Pending</td>
+            <td>Chat</td>
+            <td>Close</td>
+         </tr> -->
+        </tbody>
+     </table>
+     <div id="msg"></div>
+
+    <script src="custom.js"> 
+    </script>
+    <script src="display.js"> 
+    </script>
+</body>
+</html>

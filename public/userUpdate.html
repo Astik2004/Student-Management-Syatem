@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo">Student Management System</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./userUpdate">Update User Details</a></li>
+                <li><a href="#" id="profile"></a>
+                    <ul><li><a href="/users/auth" onclick="return logout()">Logout</a></li></ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Create Ticket Section -->
+        <div class="login-box">
+        <div class="form-box">
+            <header><h2 style="text-align: center; color: #6962e7;margin-block: 10px;">Update Record</h2></header>
+            <form action="/users/userUpdate" method="post">
+                <!-- <input type="text" placeholder="Name" id="nameField"> -->
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <input type="text" id="useremail" name="email" placeholder="Enter email" required readonly>
+                <input type="text" id="pass" name="password" placeholder="Enter password" required>
+                <input type="text" id="phone" name="phone" placeholder="Enter Phone Number" required>
+                <input type="text" id="fname" name="fname" placeholder="Enter Father Name" required>
+                <input type="text" id="address" name="address" placeholder="Enter Address" required>
+                <input type="submit" class ="loginBtn" value="Update">
+            </form>
+        </div>
+    <script src="custom.js"> 
+    </script>
+    <script>
+        const email = document.getElementById('useremail');
+        const username = document.getElementById('username');
+        const password=document.getElementById('pass');
+        const phone=document.getElementById('phone');
+        const fname=document.getElementById('fname');
+        const address=document.getElementById('address');
+fetch('/getUserDetail')
+        .then((res)=>{
+            if(res.status === 200){
+                return res.json(); 
+            }
+            else{
+                alert("Something weird happened!!!");
+            }
+        }).then((data)=>{
+            email.value=`${data.email}`;
+            username.value=`${data.username}`;
+            password.value=`${data.password}`;
+            phone.value=`${data.phone}`;
+            fname.value=`${data.fname}`;
+            address.value=`${data.address}`;
+    });
+    </script>
+</body>
+</html>

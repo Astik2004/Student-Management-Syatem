@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo">Student Management System</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./userUpdate">Update User Details</a></li>
+                <li><a href="#" id="profile"></a>
+                    <ul><li><a href="/users/auth" onclick="return logout()">Logout</a></li></ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>User Dashboard</h1>
+    <table id="dataTable" border="1">
+        <tr>
+            <th colspan="2">***User   Details***</th>
+        </tr>
+    </table>
+    <script src="custom2.js"> 
+    </script>
+</body>
+</html>
